@@ -12,8 +12,11 @@ class SWC extends Plugin {
       // TODO: lets experiment with this some, maybe SWC is fast enough to not need this? persist: true
     });
     this.options = options;
+    console.log(options, 'OPTIONS')
     this.swcOptions = {
-      ...this.options.swc
+      ...this.options.swc,
+      decorators: true,
+      dynamicImport: true,
     };
 
     if (this.swcOptions.module === undefined) {
